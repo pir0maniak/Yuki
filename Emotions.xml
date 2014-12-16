@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<application>
+<Emotion_list>
+	<emotion id="0">
+	<name>Веселье</name>
+	<value>15</value>
+	</emotion>
+	<emotion id="1">
+	<name>Хорошее настроение</name>
+	<value>45</value>
+	</emotion>
+	<emotion id="2">
+	<name>Счастье</name>
+	<value>25</value>
+	</emotion>
+	<emotion id="3">
+	<name>Напряженность</name>
+	<value>12</value>
+	</emotion>
+	<emotion id="4">
+	<name>Здоровье</name>
+	<value>11</value>
+	</emotion>
+	<emotion id="5">
+	<name>Взволнованность</name>
+	<value>14</value>
+	</emotion>
+	<emotion id="6">
+	<name>Бодрость</name>
+	<value>30</value>
+	</emotion>
+	<emotion id="7">
+	<name>Злость</name>
+	<value>100</value>
+	</emotion>
+</Emotion_list>    
+</application>
