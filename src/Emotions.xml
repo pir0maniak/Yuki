@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<application>
+<Emotion_list>
+	<emotion id="1">
+	<name>Veselie</name>
+	<value>25</value>
+	</emotion>
+</Emotion_list>    
+</application>
