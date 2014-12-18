@@ -1,11 +1,17 @@
 import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -15,16 +21,26 @@ public class MainFrame extends JFrame {
 	private JLabel leftLabel;
 	private JLabel rightLabel;
 	private JLabel yukiImage;
-	private YukiGame yukiGame;
-	private ChatArea chatArea;
+	public YukiGame yukiGame;
+	public ChatArea chatArea;
+	private JTextArea sendArea;
+	private Yukityan yukityan;
+	private String author;
+	
 	
 	public MainFrame(){
+		this.setTitle("Yuki 1.0");
 		this.getContentPane().setLayout(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(800, 600);
 		this.setLocation(50, 50);
 		createLeftLabel();
 		createRightLabel();
+		yukityan = new Yukityan(this);
+		author = JOptionPane.showInputDialog(this,"Как к вам обращаться ?","Представьтесь",JOptionPane.QUESTION_MESSAGE);
+		if (author.equals("")||(author==null)){
+			author = "Неизвестный";
+		}
 	}
 	
 	private void createLeftLabel(){
@@ -49,14 +65,44 @@ public class MainFrame extends JFrame {
 		rightLabel.setSize(540, 600);
 		chatArea = new ChatArea();
 		rightLabel.add(chatArea);
-		JTextArea sendArea = new JTextArea();
+		sendArea = new JTextArea();
 		sendArea.setLocation(10, 420);
 		sendArea.setSize(380, 140);
+		sendArea.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if (e.getExtendedKeyCode() == 10){
+					sendMessage();
+				}
+			}
+		});
 		rightLabel.add(sendArea);
 		JButton sendButton = new JButton();
 		sendButton.setLocation(400, 420);
 		sendButton.setSize(120, 140);
 		sendButton.setText("Отправить");
+		sendButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				sendMessage();
+			}
+		});
 		rightLabel.add(sendButton);
 		this.add(rightLabel);
 	}
@@ -67,8 +113,32 @@ public class MainFrame extends JFrame {
 		
 		case 0:{
 			yukiImage.setIcon(new ImageIcon("yukiDefault.jpg"));
+			break;
+		}
+		case 1:{
+			yukiImage.setIcon(new ImageIcon("yukiTongue.jpg"));
+			break;
+		}
+		case 2:{
+			yukiImage.setIcon(new ImageIcon("yukiLaughs.jpg"));
+			break;
+		}
+		case 3:{
+			yukiImage.setIcon(new ImageIcon("yukiAngry.jpg"));
+			break;
+		}
+		case 4:{
+			yukiImage.setIcon(new ImageIcon("yukiSad.jpg"));
+			break;
 		}
 		}
+	}
+	
+	private void sendMessage(){
+		Message message = new Message(sendArea.getText(),author);
+		chatArea.setText(chatArea.getText()+message.sendMessage()+"\n");
+		sendArea.setText(null);
+		yukityan.answerYuki(message);
 	}
 
 }
