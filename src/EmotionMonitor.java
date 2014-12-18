@@ -64,7 +64,6 @@ public class EmotionMonitor extends JDialog {
 		this.add(zlost);
 		this.add(veselie);
 		refreshProgresBar();
-		this.setVisible(true);
 	}
 	
 	public void refreshProgresBar(){
