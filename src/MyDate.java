@@ -47,4 +47,10 @@ public class MyDate{
 		int min = Integer.parseInt(stringTime);
 		return min;
 	}
+	
+	public static int getCurSec(){
+		String stringTime = new SimpleDateFormat("ss").format(MyDate.curDate().getTime());
+		int min = Integer.parseInt(stringTime);
+		return min;
+	}
 }

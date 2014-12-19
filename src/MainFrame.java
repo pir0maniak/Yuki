@@ -80,7 +80,7 @@ public class MainFrame extends JFrame {
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
 				if (e.getExtendedKeyCode() == 10){
-					sendMessage();
+					sendMessage(sendArea.getText().substring(0, sendArea.getText().length()-1));
 				}
 			}
 			
@@ -100,7 +100,7 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				sendMessage();
+				sendMessage(sendArea.getText());
 			}
 		});
 		rightLabel.add(sendButton);
@@ -134,8 +134,8 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	private void sendMessage(){
-		Message message = new Message(sendArea.getText(),author);
+	private void sendMessage(String mess){
+		Message message = new Message(mess,author);
 		chatArea.setText(chatArea.getText()+message.sendMessage()+"\n");
 		sendArea.setText(null);
 		yukityan.answerYuki(message);

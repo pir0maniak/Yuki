@@ -13,8 +13,10 @@ public class Alarm {
 		time = time.substring(time.length()-5, time.length());
 		int hour1 = MyDate.getCurHour();
 		int min1 = MyDate.getCurMin();
+		int sec = 60 - MyDate.getCurSec();
 		System.out.println(" "+hour1+"h");
 		System.out.println(" "+min1+"m");
+		System.out.println(" "+sec+"s");
 		int hour = Integer.parseInt(time.substring(0, 2));
 		int min = Integer.parseInt(time.substring(3, 5));
 		int totalHour;
@@ -31,10 +33,12 @@ public class Alarm {
 		}
 		else
 		{
+			if ((min-min1)>1){
 			totalTime = min-min1;
+			}
 		}	
 		totalTime += (totalHour*60);
-		totalTime = totalTime*60;
+		totalTime = (totalTime*60)+sec;
 		
 		System.out.print(hour+" "+min);
 	}
