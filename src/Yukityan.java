@@ -34,7 +34,7 @@ public class Yukityan {
 			send("Хорошо)");
 			chat.yukiEmotion(2);
 			Alarm a = new Alarm(messageContent);
-			a.run();
+			a.go();
 		}
 		
 	}

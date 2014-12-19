@@ -1,10 +1,11 @@
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 
 public class Message {
 
-	private Date sendDate;
+	private Calendar sendDate;
 	private String author;
 	private String message;
 	
@@ -12,7 +13,7 @@ public class Message {
 		this.message = message;
 		author = "Lorik";
 		long a = System.currentTimeMillis();
-		sendDate = new Date(a);
+		sendDate = MyDate.curDate();
 	}
 	public Message(String message,String author){
 		this.message = message;
@@ -25,7 +26,7 @@ public class Message {
 		return messageSend;
 	}
 	
-	public Date getSendDate(){
+	public Calendar getSendDate(){
 		return sendDate;
 	}
 	
