@@ -47,8 +47,10 @@ public class Alarm {
 	
 
 	public void go(){
-		
-	    timer = new Timer();
+		if (totalTime<0){
+			totalTime = 86400+totalTime;
+		}
+		timer = new Timer();
 	    System.out.println(" "+totalTime+"on");
 	    timer.schedule(new RemindTask(), totalTime * 1000);
 	}
