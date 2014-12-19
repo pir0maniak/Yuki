@@ -79,15 +79,15 @@ public class MainFrame extends JFrame {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+				if (e.getExtendedKeyCode() == 10){
+					sendMessage();
+				}
 			}
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
-				if (e.getExtendedKeyCode() == 10){
-					sendMessage();
-				}
+				
 			}
 		});
 		rightLabel.add(sendArea);

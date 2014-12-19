@@ -24,7 +24,7 @@ public class Yukityan {
 			send(ans);
 			chat.yukiEmotion(1);
 		}
-		if (messageContent.equals("поиграем?")){
+		if (messageContent.contains("поиграем")){
 			String ans = "Давай)";
 			send(ans);
 			chat.yukiEmotion(3);
@@ -35,6 +35,12 @@ public class Yukityan {
 			chat.yukiEmotion(2);
 			Alarm a = new Alarm(messageContent);
 			a.go();
+		}
+		if (messageContent.contains("жопа")){
+			int ans = Integer.getInteger(messageContent);
+			send(Integer.toString(ans));
+			chat.yukiEmotion(3);
+			playTicTac();
 		}
 		
 	}
