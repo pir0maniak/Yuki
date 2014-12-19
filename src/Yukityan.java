@@ -1,3 +1,11 @@
+import java.sql.Time;
+import java.time.DateTimeException;
+import java.util.Date;
+import java.util.concurrent.TimeoutException;
+
+import javax.naming.TimeLimitExceededException;
+import javax.print.attribute.standard.DateTimeAtCompleted;
+import javax.print.attribute.standard.DateTimeAtCreation;
 import javax.swing.JFrame;
 
 
@@ -22,18 +30,26 @@ public class Yukityan {
 			chat.yukiEmotion(3);
 			playTicTac();
 		}
+		if (messageContent.contains("разбуди")){
+			send("Хорошо)");
+			chat.yukiEmotion(2);
+			Alarm a = new Alarm(messageContent);
+			a.run();
+		}
 		
 	}
 	
-	public void send(String ans){
+	private void send(String ans){
 		Message answer = new Message(ans, "Yuki");
 		chat.chatArea.setText(chat.chatArea.getText()+answer.sendMessage()+"\n");
 		
 	}
 	
-	public void playTicTac(){
+	private void playTicTac(){
 		TicTacToe ttt = new TicTacToe();
 		chat.yukiGame.gameCreate(ttt);
 		chat.repaint();
 	}
+	
+	
 }

@@ -17,19 +17,12 @@ public class Message {
 	public Message(String message,String author){
 		this.message = message;
 		this.author = author;
-		long a = System.currentTimeMillis();
-		sendDate = new Date(a);
+		sendDate = MyDate.curDate();
 	}
 	
 	public String sendMessage(){
-		String messageSend = "("+timeFormater()+") "+author+": "+message;
+		String messageSend = "("+MyDate.formatTime(sendDate)+") "+author+": "+message;
 		return messageSend;
-	}
-	
-	private String timeFormater(){
-		
-		String curStringDate = new SimpleDateFormat("HH:mm").format(sendDate);
-		return curStringDate;
 	}
 	
 	public Date getSendDate(){
