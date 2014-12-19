@@ -16,7 +16,6 @@ class RemindTask extends TimerTask {
 	private boolean stop = false;
 	
 	public void run() {
-		while(!stop){
 		System.out.println("Beeeeeeep");
 		
 		try {
@@ -29,7 +28,6 @@ class RemindTask extends TimerTask {
 		
 		} catch(IOException | UnsupportedAudioFileException | LineUnavailableException exc) {
 		    exc.printStackTrace();
-		}
 		}
     }
 }

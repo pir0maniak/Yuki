@@ -55,6 +55,8 @@ public class Yukityan {
 		TicTacToe ttt = new TicTacToe();
 		chat.yukiGame.gameCreate(ttt);
 		chat.repaint();
+		YukiTTTbot bot = YukiTTTbot.getYukiTTTbot(ttt);
+		ttt.addBot(bot);
 	}
 	
 	

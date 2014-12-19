@@ -19,6 +19,7 @@ public class TicTacToe extends JLabel {
 	private Integer tttResult[][] = new Integer[3][3];
 	private int playerId = 0;
 	private boolean useble;
+	private YukiTTTbot bot;
 	
 	public TicTacToe(){
 		this.setLocation(0, 0);
@@ -219,10 +220,12 @@ public class TicTacToe extends JLabel {
 		if (playerId == 1){
 			tic = "x";
 			playerId = 2;
+			
 		}
 		else{
 			tic ="0";
 			playerId = 1;
+			bot.go();
 		}
 		b.setText(tic);
 		b.setEnabled(false);
@@ -236,5 +239,16 @@ public class TicTacToe extends JLabel {
 				tttResult[i][l]=0;
 			}
 		}
+	}
+	
+	public void usebleTrue(){
+		useble = true;
+	}
+	public int getPlayerID(){
+		return playerId;
+	}
+	
+	public void addBot(YukiTTTbot bot){
+		this.bot = bot;
 	}
 }

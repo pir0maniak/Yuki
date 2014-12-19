@@ -34,6 +34,7 @@ public class MainFrame extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(800, 600);
 		this.setLocation(50, 50);
+		this.setResizable(false);
 		createLeftLabel();
 		createRightLabel();
 		yukityan = new Yukityan(this);
