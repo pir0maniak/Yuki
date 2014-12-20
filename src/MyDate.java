@@ -1,7 +1,9 @@
 import java.lang.management.ThreadInfo;
 import java.net.InetAddress;
+import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -18,9 +20,7 @@ public class MyDate{
 		
 	}
 	public static Calendar curDate(){
-		timeZone = "GMT+3:00";
-		TimeZone.setDefault(TimeZone.getTimeZone(timeZone));
-		Calendar curDate = GregorianCalendar.getInstance();
+		Calendar curDate = Calendar.getInstance(Locale.getDefault());
 		return curDate;
 	}
 	public static String formatTime(Calendar date){

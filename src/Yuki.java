@@ -12,6 +12,5 @@ public class Yuki {
 		MainFrame frame = new MainFrame();
 		frame.setVisible(true);
 		}
-	
 
 }
