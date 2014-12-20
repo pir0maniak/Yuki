@@ -17,7 +17,7 @@ class RemindTask extends TimerTask {
 	
 	public void run() {
 		System.out.println("Beeeeeeep");
-		
+		for (int i = 0; i<5;i++){
 		try {
 		    File soundFile = new File("beep.wav");
 		    AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
@@ -28,7 +28,8 @@ class RemindTask extends TimerTask {
 		
 		} catch(IOException | UnsupportedAudioFileException | LineUnavailableException exc) {
 		    exc.printStackTrace();
-		}
+	} 
     }
+}
 }
 

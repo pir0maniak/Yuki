@@ -1,6 +1,4 @@
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 
 public class Message {
@@ -12,7 +10,6 @@ public class Message {
 	public Message(String message){
 		this.message = message;
 		author = "Lorik";
-		long a = System.currentTimeMillis();
 		sendDate = MyDate.curDate();
 	}
 	public Message(String message,String author){

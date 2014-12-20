@@ -1,13 +1,3 @@
-import java.sql.Time;
-import java.time.DateTimeException;
-import java.util.Date;
-import java.util.concurrent.TimeoutException;
-
-import javax.naming.TimeLimitExceededException;
-import javax.print.attribute.standard.DateTimeAtCompleted;
-import javax.print.attribute.standard.DateTimeAtCreation;
-import javax.swing.JFrame;
-
 
 public class Yukityan {
 
@@ -19,7 +9,7 @@ public class Yukityan {
 	
 	public void answerYuki(Message message){
 		String messageContent = message.getMessage().toLowerCase();
-		if (messageContent.equals("привет")){
+		if (messageContent.contains("привет")){
 			String ans = "Привет, "+message.getAuthor();
 			send(ans);
 			chat.yukiEmotion(1);

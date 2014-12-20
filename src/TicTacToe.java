@@ -7,6 +7,10 @@ import javax.swing.JLabel;
 
 public class TicTacToe extends JLabel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton b00;
 	JButton b01;
 	JButton b02;
@@ -17,7 +21,7 @@ public class TicTacToe extends JLabel {
 	JButton b21;
 	JButton b22;
 	private Integer tttResult[][] = new Integer[3][3];
-	private int playerId = 0;
+	private int playerId = 2;
 	private boolean useble;
 	private YukiTTTbot bot;
 	
@@ -32,10 +36,7 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
 					klick(0,b00);
-					useble = false;
-				}
 			}
 		});
 		this.add(b00);
@@ -48,10 +49,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(1,b01);
-					useble = false;
-				}
+				
 			}
 		});
 		this.add(b01);
@@ -64,10 +64,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(2,b02);
-					useble = false;
-				}
+					
 			}
 		});
 		this.add(b02);
@@ -80,10 +79,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(1,b10);
-					useble = false;
-				}
+				
 			}
 		});
 		this.add(b10);
@@ -96,10 +94,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(11,b11);
-					useble = false;
-				}
+					
 			}
 		});
 		this.add(b11);
@@ -112,10 +109,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(12,b12);
-					useble = false;
-				}
+					
 			}
 		});
 		this.add(b12);
@@ -128,10 +124,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(20,b20);
-					useble = false;
-				}
+					
 			}
 		});
 		this.add(b20);
@@ -144,10 +139,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(21,b21);
-					useble = false;
-				}
+					
 			}
 		});
 		this.add(b21);
@@ -160,10 +154,9 @@ public class TicTacToe extends JLabel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (useble){
+				
 					klick(22,b22);
-					useble = false;
-				}
+					
 			}
 		});
 		this.add(b22);
@@ -234,8 +227,8 @@ public class TicTacToe extends JLabel {
 	public void reloadResult(){
 		int i;
 		int l;
-		for (i=0;i<2;i++){
-			for (l=0;l<2;l++){
+		for (i=0;i<3;i++){
+			for (l=0;l<3;l++){
 				tttResult[i][l]=0;
 			}
 		}
