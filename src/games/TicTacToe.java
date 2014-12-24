@@ -1,8 +1,11 @@
+package games;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import yukimodel.YukiTTTbot;
 
 
 public class TicTacToe extends JLabel {
@@ -11,15 +14,15 @@ public class TicTacToe extends JLabel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton b00;
-	JButton b01;
-	JButton b02;
-	JButton b10;
-	JButton b11;
-	JButton b12;
-	JButton b20;
-	JButton b21;
-	JButton b22;
+	public JButton b00;
+	public JButton b01;
+	public JButton b02;
+	public JButton b10;
+	public JButton b11;
+	public JButton b12;
+	public JButton b20;
+	public JButton b21;
+	public JButton b22;
 	private Integer tttResult[][] = new Integer[3][3];
 	private int playerId = 2;
 	private boolean useble;

@@ -1,3 +1,4 @@
+package yukiview;
 import javax.swing.JTextArea;
 
 

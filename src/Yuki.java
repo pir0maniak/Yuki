@@ -1,5 +1,6 @@
-import java.awt.AWTException;
-import java.util.Scanner;
+import yukiview.MainFrame;
+
+
 
 
 public class Yuki {

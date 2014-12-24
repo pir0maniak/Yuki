@@ -1,3 +1,4 @@
+package myDate;
 import java.lang.management.ThreadInfo;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -28,13 +29,6 @@ public class MyDate{
 		return stringTime;
 	}
 	
-	public static void setTimeZone(int i){
-		String s="+";
-		if(i<0){
-			s="-";
-		}
-		timeZone = String.format("GMT%s%d:00", s,i);
-	}
 	
 	public static int getCurHour(){
 		String stringTime = new SimpleDateFormat("HH").format(MyDate.curDate().getTime());

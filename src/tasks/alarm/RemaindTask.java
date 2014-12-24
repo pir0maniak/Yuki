@@ -1,7 +1,6 @@
-import java.awt.Toolkit;
+package tasks.alarm;
 import java.io.File;
 import java.io.IOException;
-import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.sound.sampled.AudioInputStream;
@@ -12,8 +11,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 
 class RemindTask extends TimerTask {
-  
-	private boolean stop = false;
 	
 	public void run() {
 		System.out.println("Beeeeeeep");

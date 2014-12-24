@@ -1,15 +1,21 @@
-import java.awt.Toolkit;
-import java.sql.Time;
+package tasks.alarm;
+
 import java.util.Timer;
 
+import tasks.ResponedMessage;
+import tasks.Task;
+import yukimodel.Message;
+import myDate.MyDate;
 
-public class Alarm {
+
+public class Alarm extends Task implements ResponedMessage{
 
 	int totalTime;
 	Timer timer;
 	
 	public Alarm(String time) {
 		// TODO Auto-generated constructor stub
+		totalTime = 0;
 		time = time.substring(time.length()-5, time.length());
 		int hour1 = MyDate.getCurHour();
 		int min1 = MyDate.getCurMin();

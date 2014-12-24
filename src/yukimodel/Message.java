@@ -1,4 +1,7 @@
+package yukimodel;
 import java.util.Calendar;
+
+import myDate.MyDate;
 
 
 public class Message {

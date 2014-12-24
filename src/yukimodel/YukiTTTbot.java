@@ -1,3 +1,6 @@
+package yukimodel;
+
+import games.TicTacToe;
 
 public class YukiTTTbot {
 

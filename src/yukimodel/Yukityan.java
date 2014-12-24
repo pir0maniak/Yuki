@@ -1,3 +1,8 @@
+package yukimodel;
+
+import tasks.alarm.Alarm;
+import games.TicTacToe;
+import yukiview.MainFrame;
 
 public class Yukityan {
 
