@@ -2,13 +2,12 @@ package tasks.alarm;
 
 import java.util.Timer;
 
-import tasks.ResponedMessage;
 import tasks.Task;
 import yukimodel.Message;
 import myDate.MyDate;
 
 
-public class Alarm extends Task implements ResponedMessage{
+public class Alarm extends Task {
 
 	int totalTime;
 	Timer timer;
@@ -60,6 +59,7 @@ public class Alarm extends Task implements ResponedMessage{
 	    System.out.println(" "+totalTime+"on");
 	    timer.schedule(new RemindTask(), totalTime * 1000);
 	}
+	
 }
 
 

@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,10 +16,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 import yukimodel.Message;
+import yukimodel.MessageList;
 import yukimodel.Yukityan;
 
 
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame{
 	
 	/**
 	 * 
@@ -31,6 +34,7 @@ public class MainFrame extends JFrame {
 	private JTextArea sendArea;
 	private Yukityan yukityan;
 	private String author;
+
 	
 	
 	public MainFrame(){
@@ -47,6 +51,7 @@ public class MainFrame extends JFrame {
 		if (author.equals("")||(author==null)){
 			author = "Неизвестный";
 		}
+		
 	}
 	
 	private void createLeftLabel(){
@@ -141,10 +146,10 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void sendMessage(String mess){
-		Message message = new Message(mess,author);
-		chatArea.setText(chatArea.getText()+message.sendMessage()+"\n");
+		Message message = new Message(mess, author);
 		sendArea.setText(null);
 		yukityan.answerYuki(message);
 	}
+
 
 }

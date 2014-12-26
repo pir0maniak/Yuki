@@ -41,9 +41,7 @@ public class Yukityan {
 	}
 	
 	private void send(String ans){
-		Message answer = new Message(ans, "Yuki");
-		chat.chatArea.setText(chat.chatArea.getText()+answer.sendMessage()+"\n");
-		
+		Message answer = new Message(ans, "Yuki");		
 	}
 	
 	private void playTicTac(){

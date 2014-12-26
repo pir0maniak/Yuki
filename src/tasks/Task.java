@@ -1,13 +1,16 @@
 package tasks;
 
-import yukimodel.Message;
+import java.util.Calendar;
+
+import myDate.MyDate;
 
 public class Task {
 
 	private boolean TaskAvailable=false;
+	private Calendar creationTime;
 	
-	public static boolean isRespondToMessage(Message m){
-		return false;
+	public Task(){
+		creationTime = MyDate.curDate();
 	}
 	
 	public void onTask(){
@@ -21,4 +24,13 @@ public class Task {
 	public boolean isTaskAvailable(){
 		return TaskAvailable;
 	}
+	
+	public Calendar getCreationTime(){
+		return creationTime;
+	}
+	
+	public static boolean isRespond() {
+		  System.out.println("false");
+		  return false;
+		 }
 }
