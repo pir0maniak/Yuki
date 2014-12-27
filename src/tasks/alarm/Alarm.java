@@ -3,11 +3,12 @@ package tasks.alarm;
 import java.util.Timer;
 
 import tasks.Task;
+import tasks.inter;
 import yukimodel.Message;
 import myDate.MyDate;
 
 
-public class Alarm extends Task {
+public class Alarm extends Task implements inter {
 
 	int totalTime;
 	Timer timer;
@@ -59,6 +60,7 @@ public class Alarm extends Task {
 	    System.out.println(" "+totalTime+"on");
 	    timer.schedule(new RemindTask(), totalTime * 1000);
 	}
+	
 	
 }
 

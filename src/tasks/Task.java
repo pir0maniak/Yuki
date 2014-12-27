@@ -4,9 +4,10 @@ import java.util.Calendar;
 
 import myDate.MyDate;
 
-public class Task {
+public class Task implements inter{
 
 	private boolean TaskAvailable=false;
+	
 	private Calendar creationTime;
 	
 	public Task(){
@@ -33,4 +34,5 @@ public class Task {
 		  System.out.println("false");
 		  return false;
 		 }
+
 }
